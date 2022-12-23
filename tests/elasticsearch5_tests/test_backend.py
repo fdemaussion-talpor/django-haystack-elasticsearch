@@ -7,7 +7,7 @@ import operator
 import unittest
 from decimal import Decimal
 
-import elasticsearch
+import elasticsearch5 as elasticsearch
 from django.apps import apps
 from django.conf import settings
 from django.test import TestCase

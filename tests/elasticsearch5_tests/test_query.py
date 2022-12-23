@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import datetime
 
-import elasticsearch
+import elasticsearch5 as elasticsearch
 from django.test import TestCase
 
 from haystack import connections

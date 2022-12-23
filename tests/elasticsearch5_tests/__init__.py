@@ -12,7 +12,7 @@ warnings.simplefilter('ignore', Warning)
 def setup():
     log = logging.getLogger('haystack')
     try:
-        import elasticsearch
+        import elasticsearch5 as elasticsearch
         if not ((5, 0, 0) <= elasticsearch.__version__ < (6, 0, 0)):
             raise ImportError
         from elasticsearch import Elasticsearch, exceptions

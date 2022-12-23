@@ -2,7 +2,6 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import datetime
-import warnings
 
 import haystack
 from django.conf import settings
@@ -15,10 +14,10 @@ from haystack_elasticsearch.constants import FUZZINESS
 from haystack_elasticsearch.elasticsearch import ElasticsearchSearchBackend, ElasticsearchSearchQuery
 
 try:
-    import elasticsearch
+    import elasticsearch5 as elasticsearch
     if not ((5, 0, 0) <= elasticsearch.__version__ < (6, 0, 0)):
         raise ImportError
-    from elasticsearch.helpers import bulk, scan
+    from elasticsearch5.helpers import bulk, scan
 except ImportError:
     raise MissingDependency("The 'elasticsearch5' backend requires the \
                             installation of 'elasticsearch>=5.0.0,<6.0.0'. \

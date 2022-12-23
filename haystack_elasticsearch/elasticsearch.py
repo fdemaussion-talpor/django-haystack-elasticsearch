@@ -24,14 +24,14 @@ from haystack_elasticsearch.constants import FUZZY_MAX_EXPANSIONS, FUZZY_MIN_SIM
 
 
 try:
-    import elasticsearch
+    import elasticsearch5 as elasticsearch
     try:
         # let's try this, for elasticsearch > 1.7.0
-        from elasticsearch.helpers import bulk
+        from elasticsearch5.helpers import bulk
     except ImportError:
         # let's try this, for elasticsearch <= 1.7.0
         from elasticsearch.helpers import bulk_index as bulk
-    from elasticsearch.exceptions import NotFoundError
+    from elasticsearch5.exceptions import NotFoundError
 except ImportError:
     raise MissingDependency("The 'elasticsearch' backend requires the installation of 'elasticsearch'. Please refer to the documentation.")
 
